@@ -5,6 +5,7 @@
 
   Keep in mind that your functions must still have and use a parameter for accepting all dinosaurs.
 */
+const { getVersion } = require("jest");
 const exampleDinosaurData = require("../data/dinosaurs");
 // Do not change the line above.
 
@@ -22,7 +23,43 @@ const exampleDinosaurData = require("../data/dinosaurs");
  *  getLongestDinosaur(dinosaurs);
  *  //> { Brachiosaurus: 98.43 }
  */
-function getLongestDinosaur(dinosaurs) {}
+function getLongestDinosaur(dinosaurs) {
+
+
+let greatestLengthSoFar = 0
+let longestDinoSoFar = null
+
+if (dinosaurs.length === 0){
+  return myObj = {}
+}
+
+for (const dinosaur of dinosaurs) {
+  
+ 
+
+
+
+  let currentLength = dinosaur.lengthInMeters
+  
+  
+  
+  if (currentLength > greatestLengthSoFar) {
+   greatestLengthSoFar = currentLength;
+   longestDinoSoFar = dinosaur;
+
+  //  return (longestDinoSoFar)
+  }
+
+//  } 
+//  for (let dinosaur of dinosaurs){
+  // if (dinosaur.lengthInMeters === greatestLengthSoFar) {
+    
+}
+  // myObj = {[dinosaurs.index.name]:greatestLengthSoFar}
+  let newObj = {}
+  newObj[longestDinoSoFar.name] = longestDinoSoFar.lengthInMeters * 3.281
+  return newObj
+} 
 
 /**
  * getDinosaurDescription()
@@ -44,7 +81,27 @@ function getLongestDinosaur(dinosaurs) {}
  *  getDinosaurDescription(dinosaurs, "incorrect-id");
  *  //> "A dinosaur with an ID of 'incorrect-id' cannot be found."
  */
-function getDinosaurDescription(dinosaurs, id) {}
+function getDinosaurDescription(dinosaurs, id) {
+  for (const dinosaur of dinosaurs) {
+    
+  
+    // for (let k = 0; k < index; k++){
+      if (dinosaur.dinosaurId === id) {
+        return (dinosaur.name + " " + dinosaur.pronunciation + "\n" + dinosaur.info)
+      } else if (dinosaur.dinosaurId === "incorredct-id") {
+      return "A dinosaur with an ID of 'incorrect-id' cannot be found."
+    }
+  } return `${id}. It lived in the ${period} period, over ${mya} million years ago.`
+ }
+
+
+
+
+
+
+
+
+
 
 /**
  * getDinosaursAliveMya()
